@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Input } from "@mui/material";
+import { Button, Container, Input } from "@mui/material";
 const Form = ({ addTodo }) => {
   const [formValue, setFormValue] = useState({
     content: "",
@@ -7,14 +7,13 @@ const Form = ({ addTodo }) => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formValue.content !== "") {
-      addTodo(formValue);
-      setFormValue({ content: "", isDone: false });
-    }
+
+    addTodo(formValue);
+    setFormValue({ content: "", isDone: false });
   };
   return (
-    <div>
-      <form>
+    <Container>
+      <form onSubmit={handleSubmit}>
         <Input
           style={{
             background: "#f8f8f2	",
@@ -28,11 +27,11 @@ const Form = ({ addTodo }) => {
             setFormValue({ ...formValue, content: e.target.value })
           }
         />
-        <Button variant="contained" color="primary" onClick={handleSubmit}>
+        <Button variant="contained" color="primary" type="submit">
           Add
         </Button>
       </form>
-    </div>
+    </Container>
   );
 };
 

@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./Form";
 import Todo from "./Todo";
 import { v4 as uuidv4 } from "uuid";
+import { Container, Typography } from "@mui/material";
 const App = () => {
   const [todos, setTodos] = useState(
     !localStorage.getItem("todos-list")
@@ -29,8 +30,13 @@ const App = () => {
     setTodos([...todos]);
   };
   return (
-    <div className="App">
-      <h1>Todo List</h1>
+    <Container className="App">
+      <Typography variant="h3" style={{ color: "#8be9fd" }}>
+        2Do or not 2Do?...
+        <br/>
+        🧐👇
+      </Typography>
+      <br />
       {todos.map((todo, index) => (
         <Todo
           key={uuidv4()}
@@ -41,7 +47,7 @@ const App = () => {
         />
       ))}
       <Form addTodo={addTodo} />
-    </div>
+    </Container>
   );
 };
 
