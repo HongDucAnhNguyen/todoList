@@ -15,6 +15,8 @@ const Form = ({ addTodo }) => {
     <Container>
       <form onSubmit={handleSubmit}>
         <Input
+          autoFocus
+          inputProps={{ maxLength: 40 }}
           style={{
             background: "#f8f8f2	",
             color: "	#44475a",
