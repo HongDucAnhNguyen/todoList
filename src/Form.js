@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Input } from "@mui/material";
-const Form = ({ addTodo }) => {
+const Form = ({ addTodo, clearAllFinished }) => {
   const [formValue, setFormValue] = useState({
     content: "",
     isDone: false,
@@ -11,6 +11,7 @@ const Form = ({ addTodo }) => {
     addTodo(formValue);
     setFormValue({ content: "", isDone: false });
   };
+
   return (
     <Container>
       <form onSubmit={handleSubmit}>
@@ -31,6 +32,9 @@ const Form = ({ addTodo }) => {
         />
         <Button variant="contained" color="primary" type="submit">
           Add
+        </Button>
+        <Button variant="contained" onClick={clearAllFinished}>
+          Clear All
         </Button>
       </form>
     </Container>

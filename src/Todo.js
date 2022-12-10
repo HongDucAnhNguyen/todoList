@@ -5,10 +5,16 @@ import { Done } from "@mui/icons-material";
 import { Cancel } from "@mui/icons-material";
 const Todo = ({ todo, handleMark, handleDelete, index }) => {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <Button
-      
-      onClick={() => handleMark(index)} style={{ color: "#50fa7b" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        border: "1px solid white",
+        borderRadius: "5px",
+       
+      }}
+    >
+      <Button onClick={() => handleMark(index)} style={{ color: "#50fa7b" }}>
         {todo.isDone ? <Cancel></Cancel> : <Done></Done>}
       </Button>
       <Typography

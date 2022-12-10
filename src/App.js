@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./App.css";
 import Form from "./Form";
 import Todo from "./Todo";
 import { v4 as uuidv4 } from "uuid";
@@ -29,24 +28,33 @@ const App = () => {
     todos.splice(index, 1);
     setTodos([...todos]);
   };
+  const clearAllFinished = () => {
+    setTodos(todos.filter((todo) => todo.isDone === false));
+  };
   return (
-    <Container className="App">
+    <Container className="container">
       <Typography variant="h3" style={{ color: "#8be9fd" }}>
         2Do or not 2Do?...
-        <br/>
+        <br />
         🧐👇
       </Typography>
+      <br/>
+      <div className="todos-container">
+        {todos.map((todo, index) => (
+          <Todo
+            
+            key={uuidv4()}
+            index={index}
+            todo={todo}
+            handleMark={handleMark}
+            handleDelete={handleDelete}
+          />
+        ))}
+      </div>
+
       <br />
-      {todos.map((todo, index) => (
-        <Todo
-          key={uuidv4()}
-          index={index}
-          todo={todo}
-          handleMark={handleMark}
-          handleDelete={handleDelete}
-        />
-      ))}
-      <Form addTodo={addTodo} />
+
+      <Form addTodo={addTodo} clearAllFinished={clearAllFinished} />
     </Container>
   );
 };
