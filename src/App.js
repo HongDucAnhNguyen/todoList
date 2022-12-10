@@ -21,7 +21,7 @@ const App = () => {
     setTodos([...todos]);
   };
   const addTodo = (todo) => {
-    setTodos([...todos, todo]);
+    setTodos([todo, ...todos]);
   };
   const handleDelete = (index) => {
     //delete one item at index given
@@ -38,11 +38,10 @@ const App = () => {
         <br />
         🧐👇
       </Typography>
-      <br/>
+      <br />
       <div className="todos-container">
         {todos.map((todo, index) => (
           <Todo
-            
             key={uuidv4()}
             index={index}
             todo={todo}
