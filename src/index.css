@@ -54,6 +54,3 @@ html {
   background-color: #888;
   /*no transitions in webkit components*/
 }
-.todos-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
