@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "@mui/material";
+import { Button, Card, Typography } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import { Done } from "@mui/icons-material";
 import { Cancel } from "@mui/icons-material";
@@ -11,7 +11,7 @@ const Todo = ({ todo, handleMark, handleDelete, index }) => {
         justifyContent: "center",
         border: "1px solid white",
         borderRadius: "5px",
-       
+       height: "100%",
       }}
     >
       <Button onClick={() => handleMark(index)} style={{ color: "#50fa7b" }}>

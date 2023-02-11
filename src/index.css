@@ -37,7 +37,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 3px solid rgb(188, 33, 188);
   padding: 10px;
   border-radius: 10px;
 }
