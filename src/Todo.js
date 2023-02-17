@@ -1,24 +1,28 @@
 import React from "react";
-import { Button, Card, Typography } from "@mui/material";
+import { Button, Card, Container, IconButton, Typography } from "@mui/material";
 import { Delete } from "@mui/icons-material";
 import { Done } from "@mui/icons-material";
 import { Cancel } from "@mui/icons-material";
 const Todo = ({ todo, handleMark, handleDelete, index }) => {
   return (
-    <div
+    <Container
       style={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-between",
+        alignItems: "center",
         border: "1px solid white",
         borderRadius: "5px",
-       height: "100%",
+        height: "100%",
       }}
     >
-      <Button onClick={() => handleMark(index)} style={{ color: "#50fa7b" }}>
+      <IconButton
+        onClick={() => handleMark(index)}
+        style={{ color: "#50fa7b" }}
+      >
         {todo.isDone ? <Cancel></Cancel> : <Done></Done>}
-      </Button>
+      </IconButton>
       <Typography
-        variant="h4"
+        variant="h5"
         style={
           todo.isDone
             ? {
@@ -31,10 +35,13 @@ const Todo = ({ todo, handleMark, handleDelete, index }) => {
         {todo.content}
       </Typography>
 
-      <Button onClick={() => handleDelete(index)} style={{ color: "#ff5555" }}>
+      <IconButton
+        onClick={() => handleDelete(index)}
+        style={{ color: "#ff5555" }}
+      >
         <Delete></Delete>
-      </Button>
-    </div>
+      </IconButton>
+    </Container>
   );
 };
 

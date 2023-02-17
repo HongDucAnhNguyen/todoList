@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Button, Container, Input } from "@mui/material";
+import { Button, Container, IconButton, Input } from "@mui/material";
+import AddTaskIcon from "@mui/icons-material/AddTask";
+import RemoveDoneIcon from "@mui/icons-material/RemoveDone";
+
 const Form = ({ addTodo, clearAllFinished }) => {
   const [formValue, setFormValue] = useState({
     content: "",
@@ -30,12 +33,12 @@ const Form = ({ addTodo, clearAllFinished }) => {
             setFormValue({ ...formValue, content: e.target.value })
           }
         />
-        <Button variant="contained" color="primary" type="submit">
-          Add
-        </Button>
-        <Button variant="contained" onClick={clearAllFinished}>
-          Clear Completed
-        </Button>
+        <IconButton variant="contained" color="primary" type="submit">
+          <AddTaskIcon></AddTaskIcon>
+        </IconButton>
+        <IconButton variant="contained" onClick={clearAllFinished}>
+          <RemoveDoneIcon color="primary"></RemoveDoneIcon>
+        </IconButton>
       </form>
     </Container>
   );

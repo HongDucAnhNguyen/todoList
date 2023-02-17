@@ -31,7 +31,7 @@ const App = () => {
   };
   return (
     <Container className="container">
-      <Typography variant="h3" style={{ color: "#8be9fd" }}>
+      <Typography variant="h4" style={{ color: "#8be9fd" }}>
         2Do or not 2Do?...
         <br />
         🧐👇
