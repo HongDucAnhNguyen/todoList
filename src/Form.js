@@ -34,7 +34,7 @@ const Form = ({ addTodo, clearAllFinished }) => {
           Add
         </Button>
         <Button variant="contained" onClick={clearAllFinished}>
-          Clear All
+          Clear Completed
         </Button>
       </form>
     </Container>

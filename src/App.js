@@ -9,14 +9,12 @@ const App = () => {
       ? []
       : JSON.parse(localStorage.getItem("todos-list"))
   );
-  console.log(todos);
 
   //everytime todos list changes, save the current state to local storage
   useEffect(() => {
     localStorage.setItem("todos-list", JSON.stringify(todos));
   }, [todos]);
   const handleMark = (index) => {
-    console.log(`you marked ${index}`);
     todos[index].isDone = !todos[index].isDone;
     setTodos([...todos]);
   };
